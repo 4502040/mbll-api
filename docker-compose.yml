@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  mlbb_front:  
+    build: ./docker    
+    ports:
+      - "4200:4200"
+      - "4000:4000"
+    expose:      
+      - 4000
+      - 4200
+    volumes:
+      - ./:/app
+    #entrypoint: ["/bin/bash"]    
+    #entrypoint: ["ng","serve","--host","0.0.0.0","--poll","500"]
+    entrypoint: ["ng","serve"]
+    tty: true
+  
